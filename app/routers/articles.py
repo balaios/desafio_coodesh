@@ -2,20 +2,14 @@
 
 from fastapi import APIRouter
 
+from ..models.articles import Article
+
 router = APIRouter()
-
-
-@router.get("/articles/{id}")
-async def get_article():
-    """Function to get articles from the space flightnews API"""
-
-    return {"message": "Get article is not supported yet."}
 
 
 @router.get("/articles/")
 async def get_articles():
     """Function to get articles from the space flightnews API"""
-
     return {"message": "Get articles is not supported yet."}
 
 
@@ -23,6 +17,12 @@ async def get_articles():
 async def post_article():
     """Function to post articles from the space flightnews API"""
     return {"message": "Posting articles is not supported yet."}
+
+
+@router.get("/articles/{id}")
+async def get_article():
+    """Function to get articles from the space flightnews API"""
+    return {"message": "Get article is not supported yet."}
 
 
 @router.put("/articles/{id}")
