@@ -1,0 +1,323 @@
+{
+	"info": {
+		"_postman_id": "d5c04fa3-7a60-49ef-a7c6-7fa422cb2ec3",
+		"name": "Back-end Challenge 2021 - Space Flight News",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12570087"
+	},
+	"item": [
+		{
+			"name": "localhost",
+			"item": [
+				{
+					"name": "root",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}",
+							"host": [
+								"{{URL}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Read articles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/articles/",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"articles",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create article",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/articles/",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"articles",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Read article",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/articles/:article_id/",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"articles",
+								":article_id",
+								""
+							],
+							"variable": [
+								{
+									"key": "article_id",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete article",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/articles/:article_id/",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"articles",
+								":article_id",
+								""
+							],
+							"variable": [
+								{
+									"key": "article_id",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update article",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/articles/:article_id/",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"articles",
+								":article_id",
+								""
+							],
+							"variable": [
+								{
+									"key": "article_id",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "heroku",
+			"item": [
+				{
+					"name": "root",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL_REMOTE}}/",
+							"host": [
+								"{{URL_REMOTE}}"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Read articles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL_REMOTE}}/articles/",
+							"host": [
+								"{{URL_REMOTE}}"
+							],
+							"path": [
+								"articles",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create article",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{URL_REMOTE}}/articles/",
+							"host": [
+								"{{URL_REMOTE}}"
+							],
+							"path": [
+								"articles",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Read article",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL_REMOTE}}/articles/:article_id/",
+							"host": [
+								"{{URL_REMOTE}}"
+							],
+							"path": [
+								"articles",
+								":article_id",
+								""
+							],
+							"variable": [
+								{
+									"key": "article_id",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete article",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL_REMOTE}}/articles/:article_id/",
+							"host": [
+								"{{URL_REMOTE}}"
+							],
+							"path": [
+								"articles",
+								":article_id",
+								""
+							],
+							"variable": [
+								{
+									"key": "article_id",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update article",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL_REMOTE}}/articles/:article_id/",
+							"host": [
+								"{{URL_REMOTE}}"
+							],
+							"path": [
+								"articles",
+								":article_id",
+								""
+							],
+							"variable": [
+								{
+									"key": "article_id",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "URL",
+			"value": "http://localhost:8000",
+			"type": "string"
+		},
+		{
+			"key": "URL_REMOTE",
+			"value": "https://desafiocoodeshspace.herokuapp.com",
+			"type": "string"
+		}
+	]
+}
