@@ -1,8 +1,9 @@
 """Database. """
+
 import json
 
 import httpx
-from sqlmodel import Session, SQLModel, create_engine
+from sqlmodel import Session, SQLModel, create_engine, desc, select
 
 from ..config import settings
 from ..models.articles import Article, ArticleCreate
@@ -10,7 +11,7 @@ from ..models.articles import Article, ArticleCreate
 engine = create_engine(f"{settings.db_url}")
 
 
-def create_db_and_tables():
+def create_db_and_tables() -> None:
     """Create database and tables."""
     SQLModel.metadata.create_all(engine)
 
@@ -21,7 +22,7 @@ def get_session():
         yield session
 
 
-def populate_db():
+def populate_db() -> None:
     """Populate database."""
     with Session(engine) as session:
         db_article = session.get(Article, 1)
@@ -29,8 +30,8 @@ def populate_db():
             get_articles()
 
 
-def get_articles(start: int = 0, limit: int = 200, sort: str = "id"):
-    """Get articles."""
+def get_articles(start: int = 0, limit: int = 200, sort: str = "id") -> None:
+    """Get articles on Space Flight News API."""
     URL = "https://api.spaceflightnewsapi.net/v3/articles"
     while True:
         response = httpx.get(
@@ -48,3 +49,13 @@ def get_articles(start: int = 0, limit: int = 200, sort: str = "id"):
                 session.commit()
             else:
                 break
+
+
+def update_db() -> None:
+    """Update database."""
+    with Session(engine) as session:
+        db_article = session.exec(select(Article).order_by(desc(Article.id))).first()
+        if db_article:
+            start = 0 if db_article.id is None else db_article.id
+            limit = start + 200
+            get_articles(start, limit)
